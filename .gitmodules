@@ -1,0 +1,3 @@
+[submodule "mlib"]
+	path = mlib
+	url = git@github.com:KonishchevDmitry/mlib.git
