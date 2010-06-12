@@ -14,7 +14,9 @@ include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_BINARY_DIR})
 
 # Develop mode
 if(DEVELOP_BUILD)
-	add_definitions(-DGROV_DEBUG_MODE -DGROV_DEVELOP_MODE)
+	add_definitions(-DGROV_DEBUG_MODE=1 -DGROV_DEVELOP_MODE=1)
+else()
+	add_definitions(-DGROV_DEBUG_MODE=0 -DGROV_DEVELOP_MODE=0)
 endif()
 
 

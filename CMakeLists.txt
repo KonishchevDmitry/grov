@@ -33,7 +33,6 @@ cmake_minimum_required(VERSION 2.6)
 
 
 # Configuring MLib -->
-	set(MLIB_APP_MLIB_PARENT_DIR ${PROJECT_SOURCE_DIR})
 	set(MLIB_APP_TRANSLATIONS_DIR ${APP_TRANSLATIONS_DIR})
 
 	set(MLIB_APP_QT_MIN_VERSION 4.5)
