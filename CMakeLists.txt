@@ -76,12 +76,11 @@ add_subdirectory(${APP_UNIX_NAME})
 	set(CPACK_SOURCE_PACKAGE_FILE_NAME "${APP_UNIX_NAME}-${APP_VERSION}")
 	set(CPACK_SOURCE_GENERATOR TGZ TBZ2)
 	set(CPACK_SOURCE_IGNORE_FILES
-		"/create_source_packages"
 		"/debian"
 		"/grov/.vim"
+		"/grov/cscope.files"
+		"/grov/cscope.out"
 		"/grov/tags"
-		"/update_project"
-		"/update_translations"
 		"/TODO"
 		"/\\\\.git"
 		"/\\\\.gitignore"
