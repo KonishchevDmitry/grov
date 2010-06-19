@@ -1,3 +1,9 @@
+grov (0.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Dmitry Konishchev <konishchev@gmail.com>  Sat, 19 Jun 2010 22:07:13 +0400
+
 grov (0.1-1) unstable; urgency=low
 
   * Initial release.

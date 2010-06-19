@@ -442,39 +442,39 @@ If you have an important unsaved offline data in it, please flush this offline d
         <translation>Ошибка при получении конфигурационной информации из базы данных:</translation>
     </message>
     <message>
-        <location filename="../client/storage.cpp" line="998"/>
+        <location filename="../client/storage.cpp" line="1015"/>
         <source>Error while getting feed tree from the database:</source>
         <translation>Ошибка при получении дерева подписок из базы данных:</translation>
     </message>
     <message>
-        <location filename="../client/storage.cpp" line="1054"/>
+        <location filename="../client/storage.cpp" line="1071"/>
         <source>Unable to query a feed&apos;s item from the database.</source>
         <translation>Не удалось получить запись из базы данных.</translation>
     </message>
     <message>
-        <location filename="../client/storage.cpp" line="1137"/>
+        <location filename="../client/storage.cpp" line="1154"/>
         <source>Unable to get user changes that he made to the items:</source>
         <translation>Не удалось получить список изменений, которые пользователь произвел над записями:</translation>
     </message>
     <message>
-        <location filename="../client/storage.cpp" line="1181"/>
-        <location filename="../client/storage.cpp" line="1226"/>
+        <location filename="../client/storage.cpp" line="1198"/>
+        <location filename="../client/storage.cpp" line="1243"/>
         <source>Error while getting web cache for &apos;%1&apos;:</source>
         <translation>Ошибка при получении данных из Web-кэша для &apos;%1&apos;:</translation>
     </message>
     <message>
-        <location filename="../client/storage.cpp" line="1333"/>
+        <location filename="../client/storage.cpp" line="1350"/>
         <source>Error while synchronizing flushed to Google Reader changes with the database:</source>
         <translation>Ошибка при синхронизации отправленных данных с БД:</translation>
     </message>
     <message>
-        <location filename="../client/storage.cpp" line="1441"/>
-        <location filename="../client/storage.cpp" line="1466"/>
+        <location filename="../client/storage.cpp" line="1458"/>
+        <location filename="../client/storage.cpp" line="1483"/>
         <source>Database error:</source>
         <translation>Ошибка базы данных:</translation>
     </message>
     <message>
-        <location filename="../client/storage.cpp" line="1483"/>
+        <location filename="../client/storage.cpp" line="1500"/>
         <source>Unable to begin a transaction:</source>
         <translation>Не удалось начать транзакцию:</translation>
     </message>

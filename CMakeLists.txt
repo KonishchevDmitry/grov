@@ -7,9 +7,9 @@ cmake_minimum_required(VERSION 2.6)
 	set(APP_AUTHOR "Dmitry Konishchev")
 
 	set(APP_VERSION_MAJOR 0)
-	set(APP_VERSION_MINOR 1)
+	set(APP_VERSION_MINOR 2)
 	set(APP_VERSION_PATCH 0)
-	set(APP_VERSION "0.1")
+	set(APP_VERSION "0.2")
 
 	if(UNIX)
 		set(APP_BIN_DIR bin)
