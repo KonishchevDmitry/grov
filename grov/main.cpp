@@ -25,14 +25,11 @@
 #include <boost/scoped_ptr.hpp>
 
 #include <QtCore/QDir>
-#include <QtCore/QLibraryInfo>
 #include <QtCore/QLocale>
-#include <QtCore/QMap>
 #include <QtCore/QProcess>
 #include <QtCore/QSize>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
-#include <QtCore/QTranslator>
 
 #include <QtGui/QApplication>
 #include <QtGui/QIcon>
@@ -62,65 +59,11 @@ namespace grov { namespace {
 
 
 
-	/// Returns application's installation directory absolute path or empty
-	/// string if we could not determine it.
-	QString	get_install_dir(void);
-
-	/// Returns a string with program version.
-	QString	get_version(void);
-
 	/// Shows messages to the user.
 	void	message_handler(const char* file, int line, m::Message_type type, const QString& title, const QString& message);
 
 	/// Parses and processes command line options.
 	void	process_command_line_options(const QCoreApplication& app);
-
-
-
-	QString get_install_dir(void)
-	{
-		size_t bin_dir_depth = 0;
-
-		// Getting binaries' directory depth relative to installation
-		// directory.
-		// -->
-		{
-			QDir bin_dir = QDir::cleanPath(GROV_APP_BIN_DIR);
-
-			while(bin_dir.dirName() != "." && bin_dir.dirName() != "..")
-			{
-				bin_dir_depth++;
-				bin_dir = QDir::cleanPath(bin_dir.filePath(".."));
-
-				// If something goes wrong
-				if(bin_dir_depth > 1000)
-				{
-					MLIB_SW(QApplication::tr("Unable to determine application's installation directory"),
-						_F( QApplication::tr("Invalid application's binaries' directory path '%1'."), GROV_APP_BIN_DIR ) );
-					return "";
-				}
-			}
-		}
-		// <--
-
-		// Getting installation directory path -->
-		{
-			QDir install_dir(APP_BINARY_PATH);
-
-			// One additional operation for the binary file name
-			do {
-				if(!install_dir.cdUp())
-				{
-					MLIB_SW(QApplication::tr("Unable to determine application's installation directory"),
-						_F( QApplication::tr("Invalid application's binaries' directory path '%1' or gotten application's binary path '%2'."), GROV_APP_BIN_DIR, APP_BINARY_PATH ) );
-					return "";
-				}
-			} while(bin_dir_depth--);
-
-			return install_dir.path();
-		}
-		// Getting installation directory path <--
-	}
 
 
 
@@ -299,7 +242,8 @@ int main(int argc, char *argv[])
 		QTextCodec::setCodecForCStrings(QTextCodec::codecForLocale());
 
 		app.setApplicationName(GROV_APP_NAME);
-		app.setApplicationVersion(get_version());
+		app.setApplicationVersion(m::get_version_string(m::get_version(
+			GROV_VERSION_MAJOR, GROV_VERSION_MINOR, GROV_VERSION_PATCH )));
 		APP_BINARY_PATH = QDir(app.applicationFilePath()).absolutePath();
 	// Configuring application <--
 
@@ -315,78 +259,23 @@ int main(int argc, char *argv[])
 
 	MLIB_D("Starting the application...");
 
-	QString install_dir = get_install_dir();
-	QLocale locale = QLocale::system();
+	QString install_dir;
 
-	QTranslator qt_translator;
-	QTranslator app_translator;
-	QTranslator mlib_translator;
+	// Getting installation directory -->
+		try
+		{
+			install_dir = m::get_app_install_dir(GROV_APP_BIN_DIR);
+		}
+		catch(m::Exception& e)
+		{
+			MLIB_SW(QApplication::tr("Unable to determine application's installation directory"), EE(e));
+		}
+	// Getting installation directory <--
 
 	// TODO: All code above does not show translated strings to the user.
 
-#ifdef Q_OS_UNIX
-	// Qt's locale detection under UNIX works wrong -->
-	{
-		QMap<QString,QString> env_vars;
-
-		Q_FOREACH(const QString& var, QProcess::systemEnvironment())
-		{
-			int pos = var.indexOf('=');
-			QString name = var.mid(0, pos);
-			QString value = var.mid(pos + 1);
-			env_vars[name] = value;
-			MLIB_DV("Gotten an environment variable: '%1'='%2'.", name, value);
-		}
-
-		if(!env_vars["LC_ALL"].isEmpty())
-		{
-			locale = QLocale(env_vars["LC_ALL"]);
-			MLIB_D("Setting the locale to LC_ALL's value '%1'.", locale.name());
-		}
-		else if(!env_vars["LC_MESSAGES"].isEmpty())
-		{
-			locale = QLocale(env_vars["LC_MESSAGES"]);
-			MLIB_D("Setting the locale to LC_MESSAGES's value '%1'.", locale.name());
-		}
-		else if(!env_vars["LANG"].isEmpty())
-		{
-			locale = QLocale(env_vars["LANG"]);
-			MLIB_D("Setting the locale to LANG's value '%1'.", locale.name());
-		}
-	}
-	// Qt's locale detection under UNIX works wrong <--
-#endif
-
-	// Loading translations -->
-	{
-		bool is;
-
-		is = qt_translator.load("qt_" + locale.name(),
-			QLibraryInfo::location(QLibraryInfo::TranslationsPath) );
-		if(is)
-			app.installTranslator(&qt_translator);
-		else
-			MLIB_D("Qt's translations for '%1' did not found.", locale.name());
-
-
-		if(!install_dir.isEmpty())
-		{
-			is = app_translator.load(_F("%1_%2", GROV_APP_UNIX_NAME, locale.name()),
-				QDir(install_dir).absoluteFilePath(GROV_APP_TRANSLATIONS_DIR) );
-			if(is)
-				app.installTranslator(&app_translator);
-			else
-				MLIB_D("Application's translations for '%1' did not found.", locale.name());
-
-			is = mlib_translator.load("mlib_" + locale.name(),
-				QDir(install_dir).absoluteFilePath(GROV_APP_TRANSLATIONS_DIR) );
-			if(is)
-				app.installTranslator(&mlib_translator);
-			else
-				MLIB_D("MLib's translations for '%1' did not found.", locale.name());
-		}
-	}
-	// Loading translations <--
+	// Loading translations
+	m::load_translations(QDir(install_dir).absoluteFilePath(GROV_APP_TRANSLATIONS_DIR), GROV_APP_UNIX_NAME);
 
 	// Handle operating system signals
 	m::sys::connect_end_work_system_signal(&app, SLOT(quit()));

@@ -4,28 +4,17 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="98"/>
-        <location filename="../main.cpp" line="114"/>
+        <location filename="../main.cpp" line="272"/>
         <source>Unable to determine application&apos;s installation directory</source>
         <translation>Не удалось определить директорию, в которую было установлено приложение</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="99"/>
-        <source>Invalid application&apos;s binaries&apos; directory path &apos;%1&apos;.</source>
-        <translation>Неверный путь к исполняемым файлам приложения &apos;%1&apos;.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="115"/>
-        <source>Invalid application&apos;s binaries&apos; directory path &apos;%1&apos; or gotten application&apos;s binary path &apos;%2&apos;.</source>
-        <translation>Неверный путь к исполняемым файлам приложения &apos;%1&apos;, или получен неверный путь к исполняемому файлу приложения &apos;%2&apos;.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="180"/>
+        <location filename="../main.cpp" line="124"/>
         <source>Unknown error.</source>
         <translation>Неизвестная ошибка.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="203"/>
+        <location filename="../main.cpp" line="147"/>
         <source>Usage: %1 [OPTION]...
 
 Options:
@@ -44,22 +33,22 @@ Options:
 </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="228"/>
+        <location filename="../main.cpp" line="172"/>
         <source>Invalid command line option &apos;%1&apos;</source>
         <translation>Недопустимая опция командной строки &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="229"/>
+        <location filename="../main.cpp" line="173"/>
         <source>Please run &apos;%1 --help&apos; to view all available options.</source>
         <translation>Запустите &apos;%1 --help&apos; чтобы посмотреть все доступные опции.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="243"/>
+        <location filename="../main.cpp" line="187"/>
         <source>Invalid command line options: --verbose must be specified in conjunction with --debug.</source>
         <translation>Недопустимая комбинация опций командной строки: --verbose должна быть указана вместе с --debug.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="429"/>
+        <location filename="../main.cpp" line="319"/>
         <source>Unable to start %1</source>
         <translation>Не удалось запустить &apos;%1&apos;</translation>
     </message>
