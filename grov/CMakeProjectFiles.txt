@@ -23,7 +23,6 @@ set(GROV_SOURCES
 	main_window/viewer.cpp
 	main_window/viewer/feeds_model.cpp
 	main_window/viewer/feeds_view.cpp
-	tools/messenger.cpp
 )
 
 set(GROV_MOC_SOURCES
@@ -49,7 +48,6 @@ set(GROV_MOC_SOURCES
 	main_window/viewer/feeds_model.hpp
 	main_window/viewer/feeds_view.hpp
 	main_window/viewer.hpp
-	tools/messenger.hpp
 )
 
 set(GROV_TRANSLATIONS

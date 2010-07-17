@@ -4,17 +4,12 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="272"/>
+        <location filename="../main.cpp" line="174"/>
         <source>Unable to determine application&apos;s installation directory</source>
         <translation>Не удалось определить директорию, в которую было установлено приложение</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="124"/>
-        <source>Unknown error.</source>
-        <translation>Неизвестная ошибка.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="147"/>
+        <location filename="../main.cpp" line="72"/>
         <source>Usage: %1 [OPTION]...
 
 Options:
@@ -33,22 +28,22 @@ Options:
 </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="172"/>
+        <location filename="../main.cpp" line="97"/>
         <source>Invalid command line option &apos;%1&apos;</source>
         <translation>Недопустимая опция командной строки &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="173"/>
+        <location filename="../main.cpp" line="98"/>
         <source>Please run &apos;%1 --help&apos; to view all available options.</source>
         <translation>Запустите &apos;%1 --help&apos; чтобы посмотреть все доступные опции.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="187"/>
+        <location filename="../main.cpp" line="112"/>
         <source>Invalid command line options: --verbose must be specified in conjunction with --debug.</source>
         <translation>Недопустимая комбинация опций командной строки: --verbose должна быть указана вместе с --debug.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="319"/>
+        <location filename="../main.cpp" line="233"/>
         <source>Unable to start %1</source>
         <translation>Не удалось запустить &apos;%1&apos;</translation>
     </message>
@@ -742,14 +737,6 @@ If you have an important unsaved offline data in it, please flush this offline d
         <location filename="../main_window/viewer/feeds_model.cpp" line="202"/>
         <source>Subscriptions</source>
         <translation>Подписки</translation>
-    </message>
-</context>
-<context>
-    <name>grov::tools::Messenger</name>
-    <message>
-        <location filename="../tools/messenger.cpp" line="58"/>
-        <source>Error happened at %1:%2. Please contact to developer.</source>
-        <translation>Ошибка произошла в %1:%2. Пожалуйста, свяжитесь с разработчиком.</translation>
     </message>
 </context>
 </TS>
