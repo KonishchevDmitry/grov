@@ -99,32 +99,32 @@ Options:
 <context>
     <name>grov::Main_window</name>
     <message>
-        <location filename="../main_window.cpp" line="110"/>
+        <location filename="../main_window.cpp" line="114"/>
         <source>Going offline</source>
         <translation>Переход в автономный режим</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="111"/>
+        <location filename="../main_window.cpp" line="115"/>
         <source>Please wait while all needed data is being downloaded...</source>
         <translation>Пожалуйста, подождите, пока скачаются все необходимые данные...</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="116"/>
+        <location filename="../main_window.cpp" line="120"/>
         <source>Flushing offline data</source>
         <translation>Отправка локальных данных</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="117"/>
+        <location filename="../main_window.cpp" line="121"/>
         <source>Please wait while all offline data data is being flushed...</source>
         <translation>Пожалуйста, подождите, пока отправятся все локальные данные...</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="150"/>
+        <location filename="../main_window.cpp" line="154"/>
         <source>Discard all offline data</source>
         <translation>Стереть все локальные данные</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="151"/>
+        <location filename="../main_window.cpp" line="155"/>
         <source>Are you sure want to discard all offline data?</source>
         <translation>Вы уверены, что хотите стереть все локальные данные?</translation>
     </message>
@@ -154,119 +154,134 @@ Options:
         <translation>&amp;Запись</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="80"/>
+        <location filename="../main_window.ui" line="75"/>
+        <source>&amp;View</source>
+        <translation>&amp;Вид</translation>
+    </message>
+    <message>
+        <location filename="../main_window.ui" line="87"/>
         <source>&amp;Quit</source>
         <translation>&amp;Выход</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="83"/>
+        <location filename="../main_window.ui" line="90"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="91"/>
+        <location filename="../main_window.ui" line="98"/>
         <source>Go &amp;offline</source>
         <translation>&amp;Автономный режим</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="94"/>
-        <location filename="../main_window.ui" line="105"/>
+        <location filename="../main_window.ui" line="101"/>
+        <location filename="../main_window.ui" line="112"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="102"/>
+        <location filename="../main_window.ui" line="109"/>
         <source>&amp;Flush offline data</source>
         <translation>&amp;Отправить локальные данные</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="110"/>
+        <location filename="../main_window.ui" line="117"/>
         <source>&amp;Next item</source>
         <translation>&amp;Следующая запись</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="113"/>
+        <location filename="../main_window.ui" line="120"/>
         <source>J</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="118"/>
+        <location filename="../main_window.ui" line="125"/>
         <source>&amp;Previous item</source>
         <translation>&amp;Предыдущая запись</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="121"/>
+        <location filename="../main_window.ui" line="128"/>
         <source>K</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="126"/>
+        <location filename="../main_window.ui" line="133"/>
         <source>&amp;Discard all offline data</source>
         <translation>&amp;Стереть все локальные данные</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="129"/>
+        <location filename="../main_window.ui" line="136"/>
         <source>Ctrl+D</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="134"/>
+        <location filename="../main_window.ui" line="141"/>
         <source>&amp;About</source>
         <translation>&amp;О программе</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="139"/>
+        <location filename="../main_window.ui" line="146"/>
         <source>&amp;Go to item&apos;s page</source>
         <translation>&amp;Перейти на страницу записи</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="142"/>
+        <location filename="../main_window.ui" line="149"/>
         <source>G</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="150"/>
+        <location filename="../main_window.ui" line="157"/>
         <source>&amp;Star</source>
         <translation>&amp;Отметить</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="153"/>
+        <location filename="../main_window.ui" line="160"/>
         <source>Star</source>
         <translation>Отметить</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="156"/>
+        <location filename="../main_window.ui" line="163"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="161"/>
+        <location filename="../main_window.ui" line="168"/>
         <source>P&amp;revious unread feed or label</source>
         <translation>П&amp;редыдущая непрочитанная подписка или метка</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="164"/>
+        <location filename="../main_window.ui" line="171"/>
         <source>Shift+K</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="169"/>
+        <location filename="../main_window.ui" line="176"/>
         <source>N&amp;ext unread feed or label</source>
         <translation>С&amp;ледующая непрочитанная подписка или метка</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="172"/>
+        <location filename="../main_window.ui" line="179"/>
         <source>Shift+J</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="180"/>
+        <location filename="../main_window.ui" line="187"/>
         <source>S&amp;hare</source>
         <translation>&amp;Сделать общей</translation>
     </message>
     <message>
-        <location filename="../main_window.ui" line="183"/>
+        <location filename="../main_window.ui" line="190"/>
         <source>Ctrl+B</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../main_window.ui" line="198"/>
+        <source>&amp;Show feed list</source>
+        <translation>&amp;Отображать панель подписок</translation>
+    </message>
+    <message>
+        <location filename="../main_window.ui" line="201"/>
+        <source>F</source>
         <translation></translation>
     </message>
 </context>
@@ -461,6 +476,14 @@ If you have an important unsaved offline data in it, please flush this offline d
         <location filename="../client/storage.cpp" line="1500"/>
         <source>Unable to begin a transaction:</source>
         <translation>Не удалось начать транзакцию:</translation>
+    </message>
+</context>
+<context>
+    <name>grov::client::Web_page</name>
+    <message>
+        <location filename="../client/web_page.cpp" line="128"/>
+        <source>A JavaScript program at &apos;%1&apos; is running for a long period of time. Interrupting it.</source>
+        <translation>JavaScript-программа на странице &apos;%1&apos; работает слишком долго. Прерываем ее выполнение.</translation>
     </message>
 </context>
 <context>
@@ -665,38 +688,38 @@ If you have an important unsaved offline data in it, please flush this offline d
 <context>
     <name>grov::main_window::Viewer</name>
     <message>
-        <location filename="../main_window/viewer.cpp" line="162"/>
+        <location filename="../main_window/viewer.cpp" line="174"/>
         <source>Unable to mark feed&apos;s item as read</source>
         <translation>Не удалось пометить запись как прочитанную</translation>
     </message>
     <message>
-        <location filename="../main_window/viewer.cpp" line="184"/>
-        <location filename="../main_window/viewer.cpp" line="208"/>
+        <location filename="../main_window/viewer.cpp" line="196"/>
+        <location filename="../main_window/viewer.cpp" line="220"/>
         <source>Unable to fetch feed&apos;s item</source>
         <translation>Не удалось получить запись</translation>
     </message>
     <message>
-        <location filename="../main_window/viewer.cpp" line="266"/>
+        <location filename="../main_window/viewer.cpp" line="278"/>
         <source>Error while loading clicked link&apos;s page</source>
         <translation>Ошибка при загрузке страницы</translation>
     </message>
     <message>
-        <location filename="../main_window/viewer.cpp" line="287"/>
+        <location filename="../main_window/viewer.cpp" line="299"/>
         <source>Unable to share feed&apos;s item</source>
         <translation>Не удалось сделать запись общей</translation>
     </message>
     <message>
-        <location filename="../main_window/viewer.cpp" line="307"/>
+        <location filename="../main_window/viewer.cpp" line="319"/>
         <source>Unable to star feed&apos;s item</source>
         <translation>Не удалось отметить запись</translation>
     </message>
     <message>
-        <location filename="../main_window/viewer.cpp" line="358"/>
+        <location filename="../main_window/viewer.cpp" line="370"/>
         <source>You have no unread items.</source>
         <translation>Нет непрочитанных записей.</translation>
     </message>
     <message>
-        <location filename="../main_window/viewer.cpp" line="373"/>
+        <location filename="../main_window/viewer.cpp" line="385"/>
         <source>Please select a label or a feed to view its items.</source>
         <translation>Пожалуйста, выберите метку или подписку, чтобы посмотреть соответствующие ей записи.</translation>
     </message>
