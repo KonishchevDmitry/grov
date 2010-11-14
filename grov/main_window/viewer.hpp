@@ -58,6 +58,9 @@ class Viewer: public QWidget
 		/// Qt Designer-generated widgets.
 		Ui::Viewer*			ui;
 
+		/// Action for showing the feed list.
+		QAction*			show_feed_list_action;
+
 		/// Action for going to item's page.
 		QAction*			go_to_page_action;
 
@@ -76,11 +79,14 @@ class Viewer: public QWidget
 		/// item is being displayed at this time.
 		Db_feed_item		current_item;
 
+		/// A position that the splitter had last time when we collapsed it.
+		int					last_splitter_pos;
+
 
 	public:
 		/// Connects viewer to a parent widget and the storage, so it will
 		/// display its data.
-		void	connect_to_parent(client::Storage* storage, QAction* go_to_page_action, QAction* star_action, QAction* share_action);
+		void	connect_to_parent(client::Storage* storage, QAction* show_feed_list_action, QAction* go_to_page_action, QAction* star_action, QAction* share_action);
 
 		/// Sets selection in feed tree to none.
 		void	select_no_feed(void);
@@ -147,6 +153,12 @@ class Viewer: public QWidget
 
 		/// Sets items view widget to "Please select a label or a feed" state.
 		void	set_no_selected_feed(void);
+
+		/// Called when user clicks "Show feed list" button.
+		void	show_feed_list_toggle_cb(void);
+
+		/// Called when somebody moves splitter to a new position.
+		void	splitter_moved_cb(int pos);
 };
 
 

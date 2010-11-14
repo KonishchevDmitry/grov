@@ -70,7 +70,14 @@
     <addaction name="star"/>
     <addaction name="share"/>
    </widget>
+   <widget class="QMenu" name="view_menu">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="show_feed_list"/>
+   </widget>
    <addaction name="file_menu"/>
+   <addaction name="view_menu"/>
    <addaction name="feed_menu"/>
    <addaction name="item_menu"/>
    <addaction name="help_menu"/>
@@ -181,6 +188,17 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="show_feed_list">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Show feed list</string>
+   </property>
+   <property name="shortcut">
+    <string>F</string>
    </property>
   </action>
  </widget>

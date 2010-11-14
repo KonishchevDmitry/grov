@@ -43,7 +43,8 @@ Viewer::Viewer(QWidget *parent)
 	go_to_page_action(NULL),
 	star_action(NULL),
 	share_action(NULL),
-	storage(NULL)
+	storage(NULL),
+	last_splitter_pos(0)
 {
 	ui->setupUi(this);
 
@@ -77,7 +78,7 @@ Viewer::~Viewer(void)
 
 
 
-void Viewer::connect_to_parent(client::Storage* storage, QAction* go_to_page_action, QAction* star_action, QAction* share_action)
+void Viewer::connect_to_parent(client::Storage* storage, QAction* show_feed_list_action, QAction* go_to_page_action, QAction* star_action, QAction* share_action)
 {
 	MLIB_A(!this->storage);
 	this->storage = storage;
@@ -97,6 +98,17 @@ void Viewer::connect_to_parent(client::Storage* storage, QAction* go_to_page_act
 		connect(ui->feeds_view, SIGNAL(label_selected(Big_id)),
 			this, SLOT(label_selected(Big_id)) );
 	// Feeds_view <--
+
+	// Show feed list -->
+		this->show_feed_list_action = show_feed_list_action;
+		this->show_feed_list_action->setChecked(true);
+
+		connect(this->show_feed_list_action, SIGNAL(activated()),
+			this, SLOT(show_feed_list_toggle_cb()) );
+
+		connect(ui->viewer, SIGNAL(splitterMoved(int, int)),
+			this, SLOT(splitter_moved_cb(int)) );
+	// Show feed list <--
 
 	// Item's actions -->
 		// Go to item's page -->
@@ -400,6 +412,50 @@ void Viewer::set_star_flag_to(bool starred)
 
 	if(this->star_action)
 		this->star_action->setChecked(starred);
+}
+
+
+
+void Viewer::show_feed_list_toggle_cb(void)
+{
+	QList<int> sizes = ui->viewer->sizes();
+
+	if(this->show_feed_list_action->isChecked())
+	{
+		if(!sizes[0])
+		{
+			int size = this->last_splitter_pos;
+			if(!size)
+				size = 200;
+
+			int max_size = sizes[1] / 2;
+
+			if(size > max_size)
+				size = max_size;
+
+			sizes[0] += size;
+			sizes[1] -= size;
+		}
+	}
+	else
+	{
+		if(sizes[0])
+		{
+			this->last_splitter_pos = sizes[0];
+			sizes[1] += sizes[0];
+			sizes[0] = 0;
+		}
+	}
+
+	ui->viewer->setSizes(sizes);
+}
+
+
+
+void Viewer::splitter_moved_cb(int pos)
+{
+	this->last_splitter_pos = 0;
+	this->show_feed_list_action->setChecked(pos);
 }
 
 

@@ -50,7 +50,10 @@ Main_window::Main_window(QWidget *parent)
 	// Client <--
 
 	// Viewer -->
-		ui->viewer->connect_to_parent(this->client, ui->go_to_item_page, ui->star, ui->share);
+		ui->viewer->connect_to_parent(this->client,
+			ui->show_feed_list, ui->go_to_item_page,
+			ui->star, ui->share
+		);
 
 		connect(ui->next_unread_feed_or_label, SIGNAL(activated()),
 			ui->viewer, SLOT(go_to_next_unread_feed_or_label()) );
@@ -91,6 +94,8 @@ void Main_window::mode_changed(Client::Mode mode)
 		ui->discard_all_offline_data->setVisible(mode == Client::MODE_OFFLINE);
 		ui->flush_offline_data->setVisible(mode == Client::MODE_OFFLINE);
 
+		ui->view_menu->setEnabled(mode == Client::MODE_OFFLINE);
+		ui->show_feed_list->setEnabled(mode == Client::MODE_OFFLINE);
 		ui->feed_menu->setEnabled(mode == Client::MODE_OFFLINE);
 		ui->item_menu->setEnabled(mode == Client::MODE_OFFLINE);
 	// Menus <--
