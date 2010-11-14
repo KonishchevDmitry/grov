@@ -22,6 +22,8 @@
 
 #include <QtGui/QAction>
 
+#include <QtWebKit/QWebFrame>
+
 #include <grov/common.hpp>
 
 #include "web_page.hpp"
@@ -116,6 +118,17 @@ bool Web_page::javaScriptConfirm(QWebFrame* frame, const QString& msg)
 bool Web_page::javaScriptPrompt(QWebFrame* frame, const QString& msg, const QString& defaultValue, QString* result)
 {
 	return false;
+}
+
+
+
+bool Web_page::shouldInterruptJavaScript(void)
+{
+	MLIB_SW(_F(
+		tr("A JavaScript program at '%1' is running for a long period of time. Interrupting it."),
+		this->mainFrame()->url().toString()
+	));
+	return true;
 }
 
 

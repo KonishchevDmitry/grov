@@ -40,6 +40,9 @@ class Web_page: public QWebPage
 		Web_page(QObject* parent = NULL);
 
 	// QWebPage interface -->
+		public slots:
+			bool		shouldInterruptJavaScript(void);
+
 		protected:
 			QWebPage*	createWindow(WebWindowType type);
 			void		javaScriptAlert(QWebFrame* frame, const QString& msg);
