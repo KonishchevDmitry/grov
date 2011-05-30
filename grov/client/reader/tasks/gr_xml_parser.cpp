@@ -35,8 +35,6 @@ namespace grov { namespace client { namespace reader { namespace tasks {
 
 namespace {
 	/// If a feed labeled by name which contains this string we ignore it.
-	///
-	/// @TODO Add to the README file
 	const char* const GROV_IGNORE_LABEL_MARK = "[non-" GROV_APP_UNIX_NAME "]";
 }
 
@@ -358,7 +356,14 @@ Gr_feed_list Gr_xml_parser::subscription_list(const QByteArray& data)
 						{
 							QString label = category.text();
 
-							if(label.contains(GROV_IGNORE_LABEL_MARK))
+							// TODO: Add to the README file
+							if(
+								// Marked to ignore by user
+								label.contains(GROV_IGNORE_LABEL_MARK) ||
+
+								// Subscriptions of Google Listen Android application
+								label == "Listen Subscriptions"
+							)
 								ignore = true;
 
 							if(label != "-") // Some special label
@@ -380,7 +385,7 @@ Gr_feed_list Gr_xml_parser::subscription_list(const QByteArray& data)
 				M_THROW(tr("Gotten subscription '%1' with no id."), feed.name);
 
 			if(ignore)
-				MLIB_DV("Skipping this feed - it marked by '%1'.", GROV_IGNORE_LABEL_MARK);
+				MLIB_DV("Skipping this feed.");
 			else
 				feeds << feed;
 
